@@ -1,0 +1,19 @@
+{
+    "name": "jolicht/powerdns-model",
+    "description": "PowerDNS Model",
+    "type": "library",
+    "license": "MIT",
+    "autoload": {
+        "psr-4": {
+            "Jolicht\\PowerdnsModel\\": "src/"
+        }
+    },
+    "authors": [
+        {
+            "name": "Johannes Lichtenwallner",
+            "email": "jl@easyname.at"
+        }
+    ],
+    "minimum-stability": "stable",
+    "require": {}
+}
