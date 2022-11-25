@@ -2,13 +2,13 @@
 
 declare(strict_types=1);
 
-namespace Jolicht\Powerdns\Tests\Unit\ValueObject;
+namespace Jolicht\PowerdnsModel\Tests\ValueObject;
 
-use Jolicht\Powerdns\Tests\Unit\ValueObject\_files\ConcreteFullyQualifiedDomainName;
+use Jolicht\PowerdnsModel\Tests\ValueObject\_files\ConcreteFullyQualifiedDomainName;
 use PHPUnit\Framework\TestCase;
 
 /**
- * @covers \Jolicht\Powerdns\ValueObject\FullyQualifiedDomainName
+ * @covers \Jolicht\PowerdnsModel\ValueObject\FullyQualifiedDomainName
  */
 class FullyQualifiedDomainNameTest extends TestCase
 {

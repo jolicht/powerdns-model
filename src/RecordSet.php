@@ -2,16 +2,13 @@
 
 declare(strict_types=1);
 
-namespace Jolicht\Powerdns\Model;
+namespace Jolicht\PowerdnsModel;
 
-use function array_map;
-
-use Jolicht\Powerdns\ValueObject\RecordSetName;
-use Jolicht\Powerdns\ValueObject\Type;
-use JsonSerializable;
+use Jolicht\PowerdnsModel\ValueObject\RecordSetName;
+use Jolicht\PowerdnsModel\ValueObject\Type;
 use Webmozart\Assert\Assert;
 
-final class RecordSet implements JsonSerializable
+final class RecordSet implements \JsonSerializable
 {
     /**
      * @param Record[] $records
@@ -55,7 +52,7 @@ final class RecordSet implements JsonSerializable
             name: RecordSetName::fromString((string) $data['name']),
             type: Type::from((string) $data['type']),
             timeToLive: (int) $data['ttl'],
-            records: array_map(function (array $record) {
+            records: \array_map(function (array $record) {
                 return Record::fromArray($record);
             }, $data['records'])
         );
@@ -67,7 +64,7 @@ final class RecordSet implements JsonSerializable
             'name' => $this->name->toString(),
             'type' => $this->type->value,
             'ttl' => $this->timeToLive,
-            'records' => array_map(function (Record $record) {
+            'records' => \array_map(function (Record $record) {
                 return $record->jsonSerialize();
             }, $this->records),
         ];

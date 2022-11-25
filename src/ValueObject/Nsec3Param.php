@@ -2,18 +2,12 @@
 
 declare(strict_types=1);
 
-namespace Jolicht\Powerdns\ValueObject;
+namespace Jolicht\PowerdnsModel\ValueObject;
 
-use function explode;
-
-use Jolicht\Powerdns\ValueObject\Nsec3\HashAlgorithm;
-use Stringable;
-
-use function vsprintf;
-
+use Jolicht\PowerdnsModel\ValueObject\Nsec3\HashAlgorithm;
 use Webmozart\Assert\Assert;
 
-final class Nsec3Param implements Stringable
+final class Nsec3Param implements \Stringable
 {
     public function __construct(
         private readonly HashAlgorithm $hashAlgorithm,
@@ -57,7 +51,7 @@ final class Nsec3Param implements Stringable
 
     public function toString(): string
     {
-        return vsprintf('%1$d %2$d %3$d %4$s', [
+        return \vsprintf('%1$d %2$d %3$d %4$s', [
             $this->hashAlgorithm->value,
             $this->flags,
             $this->iterations,
@@ -73,7 +67,7 @@ final class Nsec3Param implements Stringable
 
         Assert::regex($value, '/^(\d+) (\d+) (\d+) ([[:xdigit:]]+|-)$/');
 
-        [$hashAlgorithm, $flags, $iterations, $salt] = explode(' ', $value, 4);
+        [$hashAlgorithm, $flags, $iterations, $salt] = \explode(' ', $value, 4);
 
         return new self(
             HashAlgorithm::from((int) $hashAlgorithm),

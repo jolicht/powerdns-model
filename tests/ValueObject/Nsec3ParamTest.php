@@ -2,14 +2,14 @@
 
 declare(strict_types=1);
 
-namespace Jolicht\Powerdns\Tests\Unit\ValueObject;
+namespace Jolicht\PowerdnsModel\Tests\ValueObject;
 
-use Jolicht\Powerdns\ValueObject\Nsec3\HashAlgorithm;
-use Jolicht\Powerdns\ValueObject\Nsec3Param;
+use Jolicht\PowerdnsModel\ValueObject\Nsec3\HashAlgorithm;
+use Jolicht\PowerdnsModel\ValueObject\Nsec3Param;
 use PHPUnit\Framework\TestCase;
 
 /**
- * @covers \Jolicht\Powerdns\ValueObject\Nsec3Param
+ * @covers \Jolicht\PowerdnsModel\ValueObject\Nsec3Param
  */
 class Nsec3ParamTest extends TestCase
 {

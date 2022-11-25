@@ -2,7 +2,7 @@
 
 declare(strict_types=1);
 
-namespace Jolicht\Powerdns\ValueObject;
+namespace Jolicht\PowerdnsModel\ValueObject;
 
 enum Type: string
 {

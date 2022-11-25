@@ -2,11 +2,9 @@
 
 declare(strict_types=1);
 
-namespace Jolicht\Powerdns\Model;
+namespace Jolicht\PowerdnsModel;
 
-use JsonSerializable;
-
-final class Record implements JsonSerializable
+final class Record implements \JsonSerializable
 {
     public function __construct(
         private readonly string $content,

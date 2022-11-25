@@ -2,14 +2,12 @@
 
 declare(strict_types=1);
 
-namespace Jolicht\Powerdns\Model;
+namespace Jolicht\PowerdnsModel;
 
-use function array_map;
-
-use Jolicht\Powerdns\ValueObject\Kind;
-use Jolicht\Powerdns\ValueObject\Nsec3Param;
-use Jolicht\Powerdns\ValueObject\ZoneId;
-use Jolicht\Powerdns\ValueObject\ZoneName;
+use Jolicht\PowerdnsModel\ValueObject\Kind;
+use Jolicht\PowerdnsModel\ValueObject\Nsec3Param;
+use Jolicht\PowerdnsModel\ValueObject\ZoneId;
+use Jolicht\PowerdnsModel\ValueObject\ZoneName;
 use Webmozart\Assert\Assert;
 
 final class Zone
@@ -85,7 +83,7 @@ final class Zone
             url: (string) $data['url'],
             dnssecSigned: (bool) $data['dnssec'],
             nsec3Param: null !== $data['nsec3param'] ? Nsec3Param::fromString((string) $data['nsec3param']) : null,
-            recordSets: array_map(function (array $recordSet) {
+            recordSets: \array_map(function (array $recordSet) {
                 return RecordSet::fromArray($recordSet);
             }, $data['rrsets'])
         );
